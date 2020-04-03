@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 3.0
+      dotnet: 2.2
   pre_build:
     commands:
       - pip install --upgrade awscli
@@ -12,7 +12,7 @@ phases:
     commands:
       - dotnet publish -c release -o ./build_output AspNetCoreWebService/AspNetCoreWebService.csproj
       - dotnet publish -c release -o ./test_output AspNetCoreWebServiceTest/AspNetCoreWebServiceTest.csproj
-      - dotnet vstest AspNetCoreWebServiceTest/bin/release/netcoreapp3.0/AspNetCoreWebServiceTest.dll
+      - dotnet vstest AspNetCoreWebServiceTest/bin/release/netcoreapp2.2/AspNetCoreWebServiceTest.dll
   post_build:
     commands:
       # Do not remove this statement. This command is required for AWS CodeStar projects.
